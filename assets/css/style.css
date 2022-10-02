@@ -1,0 +1,97 @@
+
+*,*::before, *::after{
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+:root {
+    --hue-neutral: aliceblue;
+    --hue-highlights: purple;
+    --hue-light: whitesmoke;
+}
+
+body{
+    color: var(--hue-highlights);
+    background-color: var(--hue-neutral);
+}
+
+header {
+    font-size: smaller;
+}
+
+main{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--hue-neutral);
+    
+}
+
+.container{
+    width: 800px;
+    max-width: 80%;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.btn-grid{
+    display:grid;
+    gap: 10px;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.btn{
+    border:2px solid var(--hue-light);
+    background-color: var(--hue-highlights);
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: var(--hue-light);
+    outline: none;
+    width: 40%;
+}
+
+.btn:hover{
+    border-color: black;
+}
+
+.start-btn, .next-btn{
+    width: auto;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result{
+    font-size: x-small;
+}
+
+.hide{
+    display: none;
+}
+
+#game-welcome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    visibility: visible;
+}
+
+.btn.correct{
+    background-color: darkgreen;
+}
+
+.btn.wrong{
+    background-color: maroon;
+}
