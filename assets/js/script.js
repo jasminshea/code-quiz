@@ -125,6 +125,7 @@ var questions = [
 //User detail storage
 var idInput = document.querySelector("#initials");
 var userIdSpan = document.querySelector("#user-id");
+var idList = document.querySelector('#user-hs');
 var highscoresSpan = document.getElementById("highscores");
 var submitIdButton = document.getElementById("id-btn");
 
@@ -143,14 +144,7 @@ function detailEntry(){
 
   startButton.innerText = 'Restart Game'
   startButton.classList.remove('hide')
+
+
 }
 
-function renderLastRegistered() {
-  var id = localStorage.getItem("id");
-
-  if (!id) {
-    return;
-  }
-
-  userIdSpan.textContent = id;
-}
