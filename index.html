@@ -8,7 +8,7 @@
   </head>
   <body>
     <header>
-      <h1>View Highscores</h1>
+      <h1>Code Quiz</h1>
     </header>
     
 
@@ -23,12 +23,22 @@
             <button class="btn">Answer 3</button>
             <button class="btn">Answer 4</button>
           </div>
-          <div id = 'result' class = 'hide'>
-          </div>
+          <div id = 'result' class = 'hide'></div>
         </div>
+        <div id="highscores" class = "hide">
+            <h1>High Scores</h1>
+            <form id="initials-form" method="POST">
+              <label for="initial-text">Enter your initials here to save your high-score: </label>
+              <input type="text" placeholder="Insert Initials..." name="initial-text" id="initial-text" />
+            </form>
+            <ul id="user-hs"></ul>
+        </div>
+
         <div class="controls">
           <button id ="start-btn" class="start-btn btn">Start</button>
           <button id ="next-btn" class="next-btn btn hide">Next</button>
+          <button id ="finish-btn" class="finish-btn btn hide">Finish Game</button>
+          <button id ="id-btn" class="id-btn btn hide">Submit my score</button>
         </div>
       </div>
     </main>

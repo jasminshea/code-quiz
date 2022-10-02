@@ -5,6 +5,7 @@ var shuffledQuestions, currentQuestionIndex
 var questionElement = document.getElementById('question')
 var answerButtonsElement = document.getElementById('answer-buttons')
 var nextButton = document.getElementById('next-btn')
+var finishButton = document.getElementById('finish-btn')
 var resultDisplay = document.getElementById('result')
 
 
@@ -21,6 +22,8 @@ function startGame(){
   currentQuestionIndex = 0 
   questionContainerElement.classList.remove('hide')
   welcomeMessage.style.visibility = 'hidden';
+  highscoresSpan.classList.add('hide')
+  submitIdButton.classList.add('hide')
   setNextQuestion()
 }
 
@@ -67,8 +70,8 @@ function selectAnswer(e){
   if (shuffledQuestions.length > currentQuestionIndex + 1){
     nextButton.classList.remove('hide')
   }else{
-    startButton.innerText = 'Restart Game'
-    startButton.classList.remove('hide')
+    finishButton.addEventListener('click', detailEntry)
+    finishButton.classList.remove('hide')
 
   }
 }
@@ -118,3 +121,36 @@ var questions = [
   }
 
 ]
+
+//User detail storage
+var idInput = document.querySelector("#initials");
+var userIdSpan = document.querySelector("#user-id");
+var highscoresSpan = document.getElementById("highscores");
+var submitIdButton = document.getElementById("id-btn");
+
+renderLastRegistered();
+
+function detailEntry(){
+  startButton.innerText = 'Restart Game'
+  startButton.classList.remove('hide')
+  questionContainerElement.classList.add('hide')
+  finishButton.classList.add('hide')
+  highscoresSpan.classList.remove('hide')
+  submitIdButton.classList.remove('hide')
+  
+
+
+
+  startButton.innerText = 'Restart Game'
+  startButton.classList.remove('hide')
+}
+
+function renderLastRegistered() {
+  var id = localStorage.getItem("id");
+
+  if (!id) {
+    return;
+  }
+
+  userIdSpan.textContent = id;
+}

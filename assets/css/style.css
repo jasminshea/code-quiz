@@ -38,6 +38,11 @@ main{
     padding: 10px;
 }
 
+.display{
+    font-size: x-small;
+    font-style: italic;
+}
+
 .btn-grid{
     display:grid;
     gap: 10px;
@@ -56,6 +61,10 @@ main{
 }
 
 .btn:hover{
+    border-color: black;
+}
+
+.btn:focus{
     border-color: black;
 }
 
